@@ -5,5 +5,6 @@
 - Each slide is a Volt component
     - Volt components are single-file Livewire components
 - The code is avaliable on GitHub:
-`[todo](todo)`
+
+`https://github.com/iztok/laravel-ai-presentation`
 </x:slide>

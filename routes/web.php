@@ -1,14 +1,11 @@
 <?php
 
 use Livewire\Volt\Volt;
-use LLPhant\Chat\OpenAIChat;
+use RakibDevs\Weather\Weather;
+use LLPhant\Chat\AnthropicChat;
 use Illuminate\Support\Facades\Route;
-use LLPhant\Query\SemanticSearch\QuestionAnswering;
-use LLPhant\Embeddings\VectorStores\FileSystem\FileSystemVectorStore;
-use LLPhant\Embeddings\EmbeddingGenerator\OpenAI\OpenAI3SmallEmbeddingGenerator;
-
-
-
+use LLPhant\Chat\FunctionInfo\Parameter;
+use LLPhant\Chat\FunctionInfo\FunctionInfo;
 
 $files = collect(glob(resource_path('views/livewire/slides/*.blade.php')))
     ->sort()
@@ -20,4 +17,3 @@ $files = collect(glob(resource_path('views/livewire/slides/*.blade.php')))
     });
 
 Route::redirect('/', '/1');
-
