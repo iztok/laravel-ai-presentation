@@ -13,7 +13,7 @@ state([
 ]);
 
 $ask = function () {
-    $vectorStore = new FileSystemVectorStore(storage_path('documents/vector_store.json'));
+    $vectorStore = new FileSystemVectorStore(storage_path('app/private/vector_store.json'));
     $embeddingGenerator = new OpenAI3SmallEmbeddingGenerator();
     $qa = new QuestionAnswering(
         $vectorStore,

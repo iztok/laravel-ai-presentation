@@ -13,7 +13,7 @@ state([
 ]);
 
 $search = function () {
-    $vectorStore = new FileSystemVectorStore(storage_path('documents/vector_store.json'));
+    $vectorStore = new FileSystemVectorStore(storage_path('app/private/vector_store.json'));
     $searchEmbedding = (new OpenAI3SmallEmbeddingGenerator())->embedText($this->question);
     $results = $vectorStore->similaritySearch($searchEmbedding, 4);
     $this->documents = array_map(fn($doc) => $doc->content, $results);

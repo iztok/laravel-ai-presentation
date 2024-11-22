@@ -12,8 +12,8 @@ state([
 ]);
 
 $storeEmbeddings = function () {
-    if (file_exists(storage_path('documents/vector_store.json'))) {
-        unlink(storage_path('documents/vector_store.json'));
+    if (file_exists(storage_path('app/private/vector_store.json'))) {
+        unlink(storage_path('app/private/vector_store.json'));
     }
 
     $file = storage_path('documents/macbook_manual.pdf');
@@ -25,7 +25,7 @@ $storeEmbeddings = function () {
     $embeddingGenerator = new OpenAI3SmallEmbeddingGenerator();
     $embeddedDocuments = $embeddingGenerator->embedDocuments($splitDocuments);
 
-    $storageJsonFile = storage_path('documents/vector_store.json');
+    $storageJsonFile = storage_path('app/private/vector_store.json');
     $vectorStore = new FileSystemVectorStore($storageJsonFile);
     $vectorStore->addDocuments($embeddedDocuments);
 
